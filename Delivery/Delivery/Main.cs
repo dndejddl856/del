@@ -38,7 +38,7 @@ namespace Delivery
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();   //////이거 이따 지워라 예시양ㅋ
         }
     }
 }
