@@ -40,5 +40,10 @@ namespace Delivery
         {
             this.Close();   //////이거 이따 지워라 예시양ㅋ
         }
+
+        private void buttom2_Click(object sender, EventArgs e)
+        {
+            new Chicken().ShowDialog();
+        }
     }
 }
