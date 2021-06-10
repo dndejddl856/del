@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Delivery
 {
-    public partial class YellowChichen : Form
+    public partial class OrderHistory : Form
     {
-        public YellowChichen()
+        public OrderHistory()
         {
             InitializeComponent();
         }

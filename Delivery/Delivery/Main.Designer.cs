@@ -37,10 +37,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -49,7 +45,7 @@
             this.label1.Font = new System.Drawing.Font("굴림", 25F);
             this.label1.Location = new System.Drawing.Point(340, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 49);
+            this.label1.Size = new System.Drawing.Size(320, 49);
             this.label1.TabIndex = 0;
             this.label1.Text = "YoinginDelivery";
             // 
@@ -96,7 +92,7 @@
             this.buttom2.Name = "buttom2";
             this.buttom2.Size = new System.Drawing.Size(140, 83);
             this.buttom2.TabIndex = 5;
-            this.buttom2.Text = "Chicken";
+            this.buttom2.Text = "주문하기";
             this.buttom2.UseVisualStyleBackColor = true;
             this.buttom2.Click += new System.EventHandler(this.buttom2_Click);
             // 
@@ -106,7 +102,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(140, 83);
             this.button3.TabIndex = 6;
-            this.button3.Text = "Pizza";
+            this.button3.Text = "주문내역";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -115,7 +111,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(140, 83);
             this.button4.TabIndex = 7;
-            this.button4.Text = "Chinese restaurant";
+            this.button4.Text = "전체메뉴";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -124,52 +120,16 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(140, 83);
             this.button5.TabIndex = 8;
-            this.button5.Text = "snack shop";
+            this.button5.Text = "리뷰쓰기";
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(67, 374);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(140, 83);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Midnight Snack";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(302, 374);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(140, 83);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "Korean restaurant";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(532, 374);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(140, 83);
-            this.button8.TabIndex = 11;
-            this.button8.Text = "japanese restaurant";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(768, 374);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(140, 83);
-            this.button9.TabIndex = 12;
-            this.button9.Text = "western restaurant";
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(23, 41);
+            this.button2.Location = new System.Drawing.Point(12, 30);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 39);
+            this.button2.Size = new System.Drawing.Size(140, 46);
             this.button2.TabIndex = 13;
-            this.button2.Text = "My page";
+            this.button2.Text = "즐겨찾기";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // Main
@@ -178,10 +138,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 591);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -208,10 +164,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button2;
     }
 }

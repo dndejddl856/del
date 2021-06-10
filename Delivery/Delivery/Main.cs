@@ -34,16 +34,18 @@ namespace Delivery
             }
             label2.Text = user.user_address;
             label3.Text = user.user_name;
+
+            connection.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();   //////이거 이따 지워라 예시양ㅋ
+            this.Close();   
         }
 
         private void buttom2_Click(object sender, EventArgs e)
         {
-            new Chicken().ShowDialog();
+         
         }
     }
 }
