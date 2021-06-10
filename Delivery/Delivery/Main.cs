@@ -45,7 +45,8 @@ namespace Delivery
 
         private void buttom2_Click(object sender, EventArgs e)
         {
-         
+            Order order = new Order(LoginUser);
+            order.ShowDialog();
         }
     }
 }
