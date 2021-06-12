@@ -40,14 +40,14 @@ namespace Delivery
                 DataGridViewRow CR = dataGridView1.CurrentRow;
                 //Visible가로 설정 된 경우에도 true 컨트롤은 다른 컨트롤 뒤에 
                 //가려져 있는 경우 사용자에 게 표시 되지 않을 수 있습니다.
-                textBox1.Text = (string)CR.Cells[0].Value;
-                textBox2.Text = (string)CR.Cells[3].Value;
+                //textBox1.Text = (string)CR.Cells[0].Value;
+                //textBox2.Text = (string)CR.Cells[3].Value;
                 //string sql = "SELECT restaurant_name,food,price,restaurant_address,number,rate FROM restaurant WHERE restaurant_name = '" + textBox1.Text + "' AND restaurant_address = '" + textBox2.Text + "';";
                 //connection.Open();
                 //MySqlCommand cmd = new MySqlCommand(sql, connection);
                 //MySqlDataReader table = cmd.ExecuteReader();
                 //connection.Close();
-                groupBox2.Visible = false;
+                
                 groupBox3.Visible = false;
             }
             catch(Exception eo1)
@@ -59,29 +59,45 @@ namespace Delivery
 
         private void button1_Click(object sender, EventArgs e)
         {
-            groupBox2.Visible = false;
-            groupBox3.Visible = false;
-            textBox4.Text = textBox2.Text;
-            string sql = "SELECT food FROM restaurant WHERE restaurant_address = '" + textBox2.Text + "'";
-            connection.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            MySqlDataReader table = cmd.ExecuteReader();
-            groupBox2.Visible = true;
-            connection.Close();
+            try
+            {
+
+              
+                groupBox3.Visible = false;
+                string sql = "SELECT number FROM restaurant WHERE restaurant_name = '" + textBox1.Text +"'" ;
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                MySqlDataReader table = cmd.ExecuteReader();
+                if (textBox1.Text.Trim() == "" || textBox3.Text.Trim() == "")
+                {
+                    MessageBox.Show("모든 정보를 입력하시오.");
+
+                }
+                while (table.Read())
+                {
+                    
+                    if (textBox3.Text == table["number"].ToString()  )
+                    {
+                        //Click(10);
+                        label20.Text = textBox3.Text;
+                    }
+                    else 
+                    {
+                        MessageBox.Show("입력하신 가게는 없습니다.");
+                        
+                    }
+                  
+                }
+                
+                connection.Close();
+            }catch(Exception exo2)
+            {
+                MessageBox.Show("일치하는 매장이 없습니다");
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if(textBox4.Text != textBox2.Text)
-            {
-                MessageBox.Show("가게 주소가 다릅니다.");
-            }
-            else
-            {
-                Click("광명시 하안동");
-            }
-        }
-        private void Click(string x)
+       
+        private void Click(int x)
         {
             try
             {
@@ -100,17 +116,27 @@ namespace Delivery
                     label6.Text = table["user_address"].ToString();
                     //label12.Text = table["price"].ToString();
                 }
-                label16.Text = x;
-                //label16.Text = textBox4.Text;
+                x=3000;
+                label22.Text = (string)CR.Cells[4].Value;
                 label8.Text = (string)CR.Cells[0].Value;
                 label10.Text = (string)CR.Cells[1].Value;
-                label12.Text = (string)CR.Cells[2].Value;
-                label15.Text = "3000";
+                label16.Text = (string)CR.Cells[3].Value;
 
                 string price = (string)CR.Cells[2].Value;
-                //double price1 = double.Parse(price);
-                price = price + 3000;
-                label18.Text = price.ToString();
+                double price1 = double.Parse(price);
+                label12.Text = price.ToString();
+                //배달비 
+                label15.Text = "3000";
+                if(int.Parse(label15.Text) == 3000)
+                {
+                    price1 = price1 + 3000;
+                }
+                else
+                {
+                    price1 = price1;
+                }
+                label18.Text = price1.ToString();
+
                 connection.Close();
             }
             catch(Exception eo2)
@@ -119,6 +145,56 @@ namespace Delivery
             }
         }
 
-       
+        private void button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("결제하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string insertQuery = "INSERT INTO orderhistory(user_id,user_address,restaurant_name,food,price,restaurant_address,number" +
+                         "VALUES('" + label4.Text + "','" + label6.Text + "','" + label8.Text + "','" + label10.Text + "','" + label18.Text + "','" + label16.Text + "','" + label22.Text + "')";
+                    connection.Open();
+                    MySqlCommand command = new MySqlCommand(insertQuery, connection);
+                    try
+                    {
+                        //정상적으로 입력되면 
+                        if (command.ExecuteNonQuery() == 1)
+                        {
+                            MessageBox.Show("입력하신 정보로 주문 완료되었습니다.");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("오류오류!!!");
+                        }
+                    }
+                    catch (Exception exo3)
+                    {
+                        MessageBox.Show(exo3.Message);
+                    }
+                }
+                else
+                {
+
+                }
+                connection.Close();
+            }catch(Exception exo4)
+            {
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(textBox3.Text == label20.Text)
+            {
+                groupBox3.Visible = true;
+                Click(10);
+            }
+            else
+            {
+                
+            }
+        }
     }
 }
