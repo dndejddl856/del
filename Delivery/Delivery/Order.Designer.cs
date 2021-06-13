@@ -69,6 +69,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -94,6 +95,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.groupBox11);
             this.groupBox3.Controls.Add(this.groupBox1);
             this.groupBox3.Controls.Add(this.groupBox10);
@@ -402,7 +404,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Location = new System.Drawing.Point(281, 427);
+            this.button10.Location = new System.Drawing.Point(177, 436);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 30);
             this.button10.TabIndex = 7;
@@ -518,6 +520,20 @@
             this.label20.TabIndex = 66;
             this.label20.Text = "label20";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(273, 436);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 30);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "뒤로가기";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -605,5 +621,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button button3;
     }
 }

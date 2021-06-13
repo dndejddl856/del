@@ -141,7 +141,8 @@ namespace Delivery
             }
             catch(Exception eo2)
             {
-                MessageBox.Show(eo2.Message);
+                MessageBox.Show("Click에서 오류");
+                //MessageBox.Show(eo2.Message);
             }
         }
 
@@ -151,7 +152,7 @@ namespace Delivery
             {
                 if (MessageBox.Show("결제하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    string insertQuery = "INSERT INTO orderhistory(user_id,user_address,restaurant_name,food,price,restaurant_address,number" +
+                    string insertQuery = "INSERT INTO orderhistory(user_id,user_address,restaurant_name,food,price,restaurant_address,number)" +
                          "VALUES('" + label4.Text + "','" + label6.Text + "','" + label8.Text + "','" + label10.Text + "','" + label18.Text + "','" + label16.Text + "','" + label22.Text + "')";
                     connection.Open();
                     MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -175,12 +176,12 @@ namespace Delivery
                 }
                 else
                 {
-
+                    MessageBox.Show("button10에서 오류");
                 }
                 connection.Close();
             }catch(Exception exo4)
             {
-
+                MessageBox.Show("button10에서 오류");
             }
         }
 
@@ -193,8 +194,13 @@ namespace Delivery
             }
             else
             {
-                
+                MessageBox.Show("가게 번호를 다시 입력하시오.");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

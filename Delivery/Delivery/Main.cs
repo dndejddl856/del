@@ -48,5 +48,11 @@ namespace Delivery
             Order order = new Order(LoginUser);
             order.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OrderHistory orderhistory = new OrderHistory(LoginUser);
+            orderhistory.ShowDialog();
+        }
     }
 }

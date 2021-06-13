@@ -71,3 +71,4 @@ C:\Users\오현민\Desktop\github\Delivery\Delivery\obj\Debug\Delivery.csproj.Co
 C:\Users\오현민\Desktop\github\Delivery\Delivery\obj\Debug\Delivery.exe
 C:\Users\오현민\Desktop\github\Delivery\Delivery\obj\Debug\Delivery.pdb
 C:\Users\오현민\Desktop\github\Delivery\Delivery\obj\Debug\Delivery.Order.resources
+C:\Users\오현민\Desktop\github\Delivery\Delivery\obj\Debug\Delivery.OrderHistory.resources
