@@ -54,5 +54,10 @@ namespace Delivery
             OrderHistory orderhistory = new OrderHistory(LoginUser);
             orderhistory.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new AllMenu().ShowDialog();
+        }
     }
 }
