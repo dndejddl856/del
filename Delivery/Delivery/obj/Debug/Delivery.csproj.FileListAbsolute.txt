@@ -73,3 +73,4 @@ C:\Users\오현민\Desktop\github\Delivery\Delivery\obj\Debug\Delivery.pdb
 C:\Users\오현민\Desktop\github\Delivery\Delivery\obj\Debug\Delivery.Order.resources
 C:\Users\오현민\Desktop\github\Delivery\Delivery\obj\Debug\Delivery.OrderHistory.resources
 C:\Users\오현민\Desktop\github\Delivery\Delivery\obj\Debug\Delivery.AllMenu.resources
+C:\Users\오현민\Desktop\github\Delivery\Delivery\obj\Debug\Delivery.Favorite.resources

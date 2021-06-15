@@ -40,10 +40,11 @@ namespace Delivery
                 textBox4.Text = (string)CR.Cells[3].Value;
                 textBox5.Text = (string)CR.Cells[4].Value;
                 textBox6.Text = (string)CR.Cells[5].Value;
+                textBox7.Text = (string)CR.Cells[6].Value;
             }
             catch(Exception ex2)
             {
-
+               
             }
         }
 
@@ -55,14 +56,14 @@ namespace Delivery
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Trim() == "" || textBox2.Text.Trim() == "" || textBox3.Text.Trim() == "" || textBox4.Text.Trim() == "" || textBox5.Text.Trim() == "" || textBox6.Text.Trim() == "")
+            if (textBox1.Text.Trim() == "" || textBox2.Text.Trim() == "" || textBox3.Text.Trim() == "" || textBox4.Text.Trim() == "" || textBox5.Text.Trim() == "" || textBox6.Text.Trim() == "" || textBox7.Text.Trim() == "")
             { 
                 MessageBox.Show("모든 정보를 입력해주세요.");
             }
             else
             {
-                string insertQuery = "INSERT INTO restaurant(restaurant_name,food,price,restaurant_address,number,rate)" +
-                "VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
+                string insertQuery = "INSERT INTO restaurant(restaurant_name,food,price,restaurant_address,number,rate,kinds)" +
+                "VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','"+ textBox7.Text + "')";
 
                 MySqlCommand command = new MySqlCommand(insertQuery, connection);
                 try//예외 처리
@@ -92,13 +93,13 @@ namespace Delivery
         {
             try
             {
-                if(textBox1.Text.Trim() == "" || textBox2.Text.Trim() == "" || textBox3.Text.Trim() == "" || textBox4.Text.Trim() == "" || textBox5.Text.Trim() == "" || textBox6.Text.Trim() == "")
+                if(textBox1.Text.Trim() == "" || textBox2.Text.Trim() == "" || textBox3.Text.Trim() == "" || textBox4.Text.Trim() == "" || textBox5.Text.Trim() == "" || textBox6.Text.Trim() == "" || textBox7.Text.Trim() == "")
                 {
                     MessageBox.Show("모든 정보를 입력해주세요.");
                 }
                 else
                 {
-                    string deleteQuery = "DELETE FROM restaurant WHERE restaurant_name = '" + textBox1.Text + "'AND food = '" + textBox2.Text + "'AND price = '" + textBox3.Text + "'AND restaurant_address = '" + textBox4.Text + "'AND number = '" + textBox5.Text +  "' AND rate = '" + textBox6.Text + "';";
+                    string deleteQuery = "DELETE FROM restaurant WHERE restaurant_name = '" + textBox1.Text + "'AND food = '" + textBox2.Text + "'AND price = '" + textBox3.Text + "'AND restaurant_address = '" + textBox4.Text + "'AND number = '" + textBox5.Text +  "' AND rate = '" + textBox6.Text + "' AND kinds = '" + textBox7.Text + "';";
                     MySqlCommand command = new MySqlCommand(deleteQuery, connection);
                     try
                     {

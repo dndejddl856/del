@@ -59,5 +59,11 @@ namespace Delivery
         {
             new AllMenu().ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Favorite favorite = new Favorite(LoginUser);
+            favorite.ShowDialog();
+        }
     }
 }
